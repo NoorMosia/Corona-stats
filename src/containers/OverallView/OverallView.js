@@ -40,7 +40,7 @@ class OverallView extends Component {
                         <React.Fragment>
                             <StatsCard name="cases">{NumConverter(this.state.cases)}</StatsCard>
                             <StatsCard name="recovered">{NumConverter(this.state.recovered)}</StatsCard>
-                            <StatsCard name="died">{NumConverter(this.state.deaths)}</StatsCard>
+                            <StatsCard name="deaths">{NumConverter(this.state.deaths)}</StatsCard>
                         </React.Fragment> :
                         <Loader></Loader>
                 }

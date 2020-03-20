@@ -19,7 +19,7 @@ const Wrapper = () => {
                 <Route path='/map' render={() => <MapView />} exact />
                 <Route path='/graph' render={() => <GraphView />} />
                 <Route path='/about' render={() => <AboutView />} />
-                <Route path='/' render={() => <OverallView />} />
+                <Route path='/overall' render={() => <OverallView />} />
                 <Redirect from="/" exact to="/overall" />
             </Switch>
 
