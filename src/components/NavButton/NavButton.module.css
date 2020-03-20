@@ -1,0 +1,23 @@
+.NavButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25%;
+    background: rgb(41, 41, 41);
+    border: 1px solid rgb(15, 15, 15);
+    color: rgb(255, 213, 213);
+    font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.Active {
+    background: rgb(14, 14, 14);
+}
+
+
+@media only screen and (max-width:1024px){ 
+    .NavButton {
+        width: 25vw;
+    }
+}

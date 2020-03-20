@@ -1,0 +1,11 @@
+.Header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 213, 213);
+    background: rgb(47, 47, 47);
+    height: 10vh;
+    font-size: 26px;
+    font-weight: 200;
+    letter-spacing: 2px;
+}

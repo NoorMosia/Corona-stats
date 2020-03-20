@@ -1,0 +1,10 @@
+.GraphView {
+    height: 80vh;
+    overflow: scroll;
+}
+
+.Text {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 200;
+}

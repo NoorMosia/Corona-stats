@@ -1,0 +1,14 @@
+.Country {
+    font-size: 26px;
+    text-align: center;
+    margin: 5px;
+}
+
+.Popup {
+    width: 50vw;
+}
+
+.Data {
+    font-size: 18px;
+    margin: 10px;
+}

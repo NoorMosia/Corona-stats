@@ -1,0 +1,18 @@
+.AboutView {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: #eee;
+}
+
+.AboutView a {
+    color: black;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width:1024px){ 
+    .AboutView {
+        padding-bottom: 250px;
+    }   
+}

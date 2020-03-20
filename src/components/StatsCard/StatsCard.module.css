@@ -1,0 +1,26 @@
+.StatsCard {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    font-weight: 300;
+    height: 20vh;
+    width: 90%;
+    box-shadow: 2px 2px 4px rgb(39, 39, 39);
+    text-transform: uppercase;
+    color: rgb(26, 26, 26);
+    border-radius: 8px;
+}
+
+.cases {
+    color: rgb(0, 9, 92);
+}
+
+
+.recovered { 
+    color: green;
+}
+
+.died {
+    color: red;
+}

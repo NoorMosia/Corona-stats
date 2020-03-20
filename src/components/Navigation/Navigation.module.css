@@ -1,0 +1,13 @@
+.Navigation {
+    display: flex;
+    height: 10vh;
+    background: black;
+}
+
+
+@media only screen and (max-width:1024px){
+    .Navigation {
+        position: fixed;
+        bottom: 0;
+    }
+}
