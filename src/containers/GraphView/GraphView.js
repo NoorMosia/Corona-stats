@@ -4,12 +4,14 @@ import Dropdown from "../../components/Dropdown/Dropdown";
 
 import Chart from "../../components/Chart/Chart";
 import Loader from "../../UI/Loader/Loader";
+import Error from "../../UI/Error/Error";
 
 class GraphView extends Component {
     state = {
         data: {},
         filteredData: [],
-        loading: false
+        loading: false,
+        error: false
     }
 
     componentDidMount() {
@@ -25,7 +27,8 @@ class GraphView extends Component {
                 this.setState({
                     ...this.state,
                     data: data,
-                    loading: false
+                    loading: false,
+                    error: false
                 })
 
                 return data;
@@ -34,7 +37,11 @@ class GraphView extends Component {
                 this.filterData("Afghanistan")
             })
             .catch(err => {
-                console.log(err)
+                this.setState({
+                    ...this.state,
+                    loading: false,
+                    error: true
+                })
             })
     }
 
@@ -93,12 +100,12 @@ class GraphView extends Component {
     }
 
     render() {
-        console.log(this.state.loading)
+        let altComponent = this.state.error ? <Error /> : <Loader />
 
         return (
             <div className={Styles.GraphView}>
                 {
-                    !this.state.loading ?
+                    !this.state.loading && !this.state.error ?
                         <React.Fragment>
                             <Dropdown
                                 data={this.state.data}
@@ -107,7 +114,7 @@ class GraphView extends Component {
                             <div className={Styles.Text}>Last 15 days</div>
                             <Chart data={this.state.filteredData} />
                         </React.Fragment> :
-                        <Loader />
+                        altComponent
                 }
             </div>
         )

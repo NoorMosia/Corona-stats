@@ -4,12 +4,15 @@ import Axios from "axios"
 import Map from "../../components/Map/Map";
 import * as Styles from "./MapView.module.css";
 import Loader from "../../UI/Loader/Loader";
+import Error from "../../UI/Error/Error";
+import ErrorBoundary from "../../HelperFunctions/ErrorBoundary";
 
 class MapView extends Component {
     state = {
         data: [],
         selectedLocation: null,
-        loading: true
+        loading: true,
+        error: false
     }
 
     componentDidMount = async () => {
@@ -17,14 +20,15 @@ class MapView extends Component {
             .then(response => {
                 this.setState({
                     data: response.data.locations,
-                    loading: false
+                    loading: false,
+                    error: false
                 })
             })
             .catch(error => {
                 this.setState({
-                    loading: false
+                    loading: false,
+                    error: true
                 })
-                console.log(error)
             })
     }
 
@@ -43,23 +47,28 @@ class MapView extends Component {
     }
 
     render() {
-        console.log(this.state.selectedLocation)
+
+        const altComponent = this.state.error ? <Error /> : <Loader />
+
         return (
             <div className={Styles.MapView}>
                 {
-                    !this.state.loading ? <Map
-                        googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_MAP_API_KEY}`}
-                        loadingElement={<div style={{ height: `100%` }} />}
-                        containerElement={<div style={{ height: `100%` }} />}
-                        mapElement={<div style={{ height: `100%` }} />}
-                        data={this.state.data.slice(0, 100)}
-                        clickHandler={(loc) => this.setSelectedLocation(loc)}
-                        deselectHandler={this.unsetSelectedLocation}
-                        selected={this.state.selectedLocation}
+                    !this.state.loading ?
+                        <ErrorBoundary>
+                            <Map
+                                googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_MAP_API_KEY}`}
+                                loadingElement={<div style={{ height: `100%` }} />}
+                                containerElement={<div style={{ height: `100%` }} />}
+                                mapElement={<div style={{ height: `100%` }} />}
+                                data={this.state.data.slice(0, 100)}
+                                clickHandler={(loc) => this.setSelectedLocation(loc)}
+                                deselectHandler={this.unsetSelectedLocation}
+                                selected={this.state.selectedLocation}
 
-                    >
-                    </Map> :
-                        <Loader></Loader>
+                            >
+                            </Map>
+                        </ErrorBoundary> :
+                        altComponent
                 }
 
             </div >

@@ -11,9 +11,9 @@ const AboutView = () => {
                 <a href="http://noormosia.com">Noor Tshepo Mosia</a>
             </AboutSection>
             <AboutSection heading="notes">
-                Although the data used for this app seems accurate,<br />
-                I have built this for educational purposes on my side.<br />
-                It is not intended for serious use.
+                Data used in this have been acquired from public APIs.<br />
+                All data is subject to confirmation.<br />
+
             </AboutSection>
             <AboutSection heading="credits">
                 Overall stats are from an API built by <a href="https://github.com/javieraviles/covidAPI">Javier Aviles</a>.<br /><br />
