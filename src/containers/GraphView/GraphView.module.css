@@ -1,6 +1,7 @@
 .GraphView {
     height: 80vh;
     overflow: scroll;
+    background: ghostwhite;
 }
 
 .Text {

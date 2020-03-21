@@ -1,7 +1,7 @@
 .Wrapper {
     display: flex;
     flex-direction: column;
-    background: rgb(236, 236, 236);
+    background: ghostwhite;
     height: 100vh;
     width: 80%;
 }
@@ -12,3 +12,6 @@
         width: 100%;
     }
 }
+
+
+/* background: rgb(236, 236, 236); */

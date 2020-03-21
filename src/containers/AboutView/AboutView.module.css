@@ -2,13 +2,13 @@
     display: flex;
     flex-direction: column;
     text-align: center;
-    background: #eee;
+    background: ghostwhite;
     height: 80vh;
     overflow: scroll;
 }
 
 .AboutView a {
-    color: black;
+    color: rgb(2, 15, 83);
     cursor: pointer;
 }
 
