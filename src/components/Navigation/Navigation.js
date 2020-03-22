@@ -7,6 +7,7 @@ const Navigation = () => {
     return (
         <div className={Styles.Navigation}>
             <NavButton>overall</NavButton>
+            <NavButton>za</NavButton>
             <NavButton>map</NavButton>
             <NavButton>graph</NavButton>
             <NavButton>about</NavButton>

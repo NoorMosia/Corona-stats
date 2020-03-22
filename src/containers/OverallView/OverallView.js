@@ -28,7 +28,6 @@ class OverallView extends Component {
                 this.setState({
                     loading: false
                 })
-                console.log(error);
             })
     }
 

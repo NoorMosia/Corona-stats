@@ -9,6 +9,7 @@ import MapView from "../../containers/MapView/MapView";
 import GraphView from "../../containers/GraphView/GraphView";
 import Navigation from "../Navigation/Navigation";
 import AboutView from "../../containers/AboutView/AboutView";
+import ZAView from "../../containers/ZAView/ZAView";
 
 const Wrapper = () => {
     return (
@@ -20,6 +21,7 @@ const Wrapper = () => {
                 <Route path='/graph' render={() => <GraphView />} />
                 <Route path='/about' render={() => <AboutView />} />
                 <Route path='/overall' render={() => <OverallView />} />
+                <Route path='/za' render={() => <ZAView />} />
                 <Redirect from="/" exact to="/overall" />
             </Switch>
 

@@ -4,6 +4,7 @@ import { MdHome } from 'react-icons/md';
 import { FiMapPin } from 'react-icons/fi';
 import { GoGraph } from 'react-icons/go';
 import { FaUserAstronaut } from 'react-icons/fa';
+import { FaGlobeAfrica } from 'react-icons/fa'
 
 import * as Styles from "./NavButton.module.css";
 
@@ -14,8 +15,11 @@ const NavButton = props => {
         case "overall":
             button = <MdHome />
             break;
-        case "map":
+        case "za":
             button = <FiMapPin />
+            break;
+        case "map":
+            button = <FaGlobeAfrica />
             break;
         case "graph":
             button = <GoGraph />
