@@ -44,6 +44,27 @@ class ZAView extends Component {
         const keys = Object.keys(data)
         const values = Object.values(data)
 
+        for (let index = 0; index < keys.length; index++) {
+            if (keys[index] === "minors") {
+                keys[index] = "<18"
+            } else if (keys[index] === "youngAdults") {
+                keys[index] = "18 - 29"
+            } else if (keys[index] === "adults") {
+                keys[index] = "30 - 39"
+            } else if (keys[index] === "adultsOver40") {
+                keys[index] = "40 - 49"
+            } else if (keys[index] === "adultsOver50") {
+                keys[index] = "50 - 59"
+            } else if (keys[index] === "seniors") {
+                keys[index] = ">=60"
+            } else if (keys[index] === "no_travel") {
+                keys[index] = "no travel history"
+            } else if (keys[index] === "visit") {
+                keys[index] = "non-citizen"
+            }
+        }
+
+
         charData = {
             labels: keys,
             datasets: [{
@@ -73,6 +94,7 @@ class ZAView extends Component {
             <div className={Styles.ZAView}>
                 {!this.state.loading ?
                     <React.Fragment>
+                        <h2 className={Styles.Head}>SA statistics</h2>
                         <LineChart
                             chartData={this.formatChartData(this.state.data.provinces)}
                             displayTitle="Provinces affected"
