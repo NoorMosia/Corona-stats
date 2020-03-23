@@ -3,6 +3,15 @@ import { Pie } from 'react-chartjs-2';
 import 'chartjs-plugin-datalabels';
 import * as Styles from "./PieChart.module.css";
 
+// eslint-disable-next-line no-extend-native
+const truncateDecimals = function (number, digits) {
+    var multiplier = Math.pow(10, digits),
+        adjustedNum = number * multiplier,
+        truncatedNum = Math[adjustedNum < 0 ? 'ceil' : 'floor'](adjustedNum);
+
+    return truncatedNum / multiplier;
+};
+
 const PieChart = props => {
 
     return (
@@ -28,7 +37,8 @@ const PieChart = props => {
                             display: true,
                             color: 'black',
                             formatter: function (value, context) {
-                                return Math.round(value / props.total * 1000) / 10 + "%";
+                                // parseFloat(number.toFixed(2))
+                                return truncateDecimals(value / props.total * 100, 1) + "%";
                             }
                         }
                     }

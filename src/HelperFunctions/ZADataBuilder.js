@@ -5,7 +5,7 @@
 const dataBuilder = (data) => {
     let newData = {}
     let provinces = {
-        "GP": 0, "KZN": 0, "WC": 0, "EC": 0, "NC": 0, "NW": 0, "FS": 0, "LP": 0, "MP": 0, "untracked": 0
+        "GP": 0, "KZN": 1, "WC": -1, "EC": 0, "NC": 0, "NW": 0, "FS": 0, "LP": 0, "MP": 0, "untracked": 0
     }
     let ages = {
         "minors": 0, "youngAdults": 0, "adults": 0, "adultsOver40": 0, "adultsOver50": 0, "seniors": 0
@@ -40,14 +40,26 @@ const dataBuilder = (data) => {
             ages = { ...ages, "seniors": ages["seniors"] + 1 }
         }
 
-        if (data[index]["transmission_type"].substring(0, 5) === "Trave") {
-            transmission_types = { ...transmission_types, "travel": transmission_types["travel"] + 1 }
+        if (data[index]["transmission_type"].substring(0, 5) === "Trave" || data[index]["transmission_type"] === "r") {
+            transmission_types = {
+                ...transmission_types, "travel": transmission_types["travel"] + 1
+            }
         } else if (data[index]["transmission_type"].substring(0, 5) === "Visit") {
-            transmission_types = { ...transmission_types, "visit": transmission_types["visit"] + 1 }
+            transmission_types = {
+                ...transmission_types, "visit": transmission_types["visit"] + 1
+            }
         } else if (data[index]["transmission_type"].substring(0, 5) === "no in") {
-            transmission_types = { ...transmission_types, "no_travel": transmission_types["no_travel"] + 1 }
-        } else if (data[index]["transmission_type"].substring(0, 5) === "with ") {
-            transmission_types = { ...transmission_types, "pending": transmission_types["pending"] + 1 }
+            transmission_types = {
+                ...transmission_types, "no_travel": transmission_types["no_travel"] + 1
+            }
+        } else if (data[index]["transmission_type"].substring(0, 6) === "with n") {
+            transmission_types = {
+                ...transmission_types, "no_travel": transmission_types["no_travel"] + 1
+            }
+        } else {
+            transmission_types = {
+                ...transmission_types, "pending": transmission_types["pending"] + 1
+            }
         }
 
         if (data[index]["validators"] === "GP") {
@@ -79,7 +91,6 @@ const dataBuilder = (data) => {
         transmission_types: transmission_types,
         provinces: provinces
     }
-
 
     return newData;
 }

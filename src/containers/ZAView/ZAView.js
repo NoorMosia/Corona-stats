@@ -6,6 +6,7 @@ import Loader from "../../UI/Loader/Loader";
 
 import LineChart from "../../components/Chart/LineChart/LineChart";
 import PieChart from "../../components/Chart/PieChart/PieChart";
+import OverallView from "../OverallView/OverallView";
 
 class ZAView extends Component {
     state = {
@@ -56,11 +57,13 @@ class ZAView extends Component {
             } else if (keys[index] === "adultsOver50") {
                 keys[index] = "50 - 59"
             } else if (keys[index] === "seniors") {
-                keys[index] = ">=60"
+                keys[index] = " >=60"
             } else if (keys[index] === "no_travel") {
                 keys[index] = "no travel history"
             } else if (keys[index] === "visit") {
                 keys[index] = "non-citizen"
+            } else if (keys[index] === "travel") {
+                keys[index] = "travelled"
             }
         }
 
@@ -91,11 +94,12 @@ class ZAView extends Component {
 
 
     render() {
-        console.log(this.state.data)
+
         return (
             <div className={Styles.ZAView}>
                 {!this.state.loading ?
                     <React.Fragment>
+                        <OverallView></OverallView>
                         <h2 className={Styles.Head}>SA statistics</h2>
                         <LineChart
                             chartData={this.formatChartData(this.state.data.provinces)}
@@ -104,7 +108,7 @@ class ZAView extends Component {
                         <PieChart
                             total={this.state.total}
                             chartData={this.formatChartData(this.state.data.transmission_types)}
-                            displayTitle="Transmission types"
+                            displayTitle="Recent travel history"
                         ></PieChart>
                         <PieChart
                             total={this.state.total}
