@@ -100,7 +100,7 @@ class ZAView extends Component {
                 {!this.state.loading ?
                     <React.Fragment>
                         <OverallView></OverallView>
-                        <h2 className={Styles.Head}>SA statistics</h2>
+                        <h2 className={Styles.Head}>SA after {this.state.total} cases</h2>
                         <LineChart
                             chartData={this.formatChartData(this.state.data.provinces)}
                             displayTitle="Provinces affected"

@@ -6,7 +6,7 @@ import NavButton from "../NavButton/NavButton";
 const Navigation = () => {
     return (
         <div className={Styles.Navigation}>
-            <NavButton>overall</NavButton>
+            <NavButton>home</NavButton>
             <NavButton>za</NavButton>
             <NavButton>map</NavButton>
             <NavButton>graph</NavButton>

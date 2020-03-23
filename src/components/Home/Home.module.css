@@ -1,0 +1,14 @@
+.Home {
+    height: 80vh;
+    overflow: scroll;
+}
+
+.Cite {
+    text-align: center;
+    width: 80%;
+    margin: 100px auto;
+}
+
+.Cite a {
+    color: rgb(251, 39, 56);
+}

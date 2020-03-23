@@ -12,7 +12,7 @@ const NavButton = props => {
     let button;
 
     switch (props.children) {
-        case "overall":
+        case "home":
             button = <MdHome />
             break;
         case "za":
