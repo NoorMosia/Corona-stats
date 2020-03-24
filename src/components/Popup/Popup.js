@@ -7,7 +7,8 @@ const Popup = props => {
     return (
         <div className={Styles.Popup}>
             <div className={Styles.Country}>
-                {props.data.country}
+                {props.data.country}<br />
+                {props.data.province}
             </div>
 
             <div className={Styles.Data}>

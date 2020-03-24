@@ -60,7 +60,7 @@ class MapView extends Component {
                                 loadingElement={<div style={{ height: `100%` }} />}
                                 containerElement={<div style={{ height: `100%` }} />}
                                 mapElement={<div style={{ height: `100%` }} />}
-                                data={this.state.data.slice(0, 100)}
+                                data={this.state.data}
                                 clickHandler={(loc) => this.setSelectedLocation(loc)}
                                 deselectHandler={this.unsetSelectedLocation}
                                 selected={this.state.selectedLocation}
