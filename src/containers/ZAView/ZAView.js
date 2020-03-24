@@ -57,7 +57,7 @@ class ZAView extends Component {
             } else if (keys[index] === "adultsOver50") {
                 keys[index] = "50 - 59"
             } else if (keys[index] === "seniors") {
-                keys[index] = " >=60"
+                keys[index] = ">=60"
             } else if (keys[index] === "no_travel") {
                 keys[index] = "no travel history"
             } else if (keys[index] === "visit") {
@@ -66,7 +66,6 @@ class ZAView extends Component {
                 keys[index] = "travelled"
             }
         }
-
 
         charData = {
             labels: keys,
@@ -91,8 +90,6 @@ class ZAView extends Component {
         return charData;
     }
 
-
-
     render() {
 
         return (
@@ -101,15 +98,18 @@ class ZAView extends Component {
                     <React.Fragment>
                         <OverallView></OverallView>
                         <h2 className={Styles.Head}>SA after {this.state.total} cases</h2>
+
                         <LineChart
                             chartData={this.formatChartData(this.state.data.provinces)}
                             displayTitle="Provinces affected"
                         ></LineChart>
+
                         <PieChart
                             total={this.state.total}
                             chartData={this.formatChartData(this.state.data.transmission_types)}
-                            displayTitle="Recent travel history"
+                            displayTitle="Travel history(close to diagnosis)"
                         ></PieChart>
+
                         <PieChart
                             total={this.state.total}
                             chartData={this.formatChartData(this.state.data.ages)}

@@ -47,7 +47,6 @@ class MapView extends Component {
     }
 
     render() {
-
         const altComponent = this.state.error ? <Error /> : <Loader />
 
         return (
@@ -64,13 +63,11 @@ class MapView extends Component {
                                 clickHandler={(loc) => this.setSelectedLocation(loc)}
                                 deselectHandler={this.unsetSelectedLocation}
                                 selected={this.state.selectedLocation}
-
                             >
                             </Map>
                         </ErrorBoundary> :
                         altComponent
                 }
-
             </div >
         )
     }

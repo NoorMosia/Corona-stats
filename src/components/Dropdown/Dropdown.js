@@ -2,7 +2,6 @@ import React from "react";
 import * as Styles from "./Dropdown.module.css";
 
 const Dropdown = props => {
-
     return (
         <div className={Styles.Dropdown}>
             <select
@@ -19,7 +18,6 @@ const Dropdown = props => {
             </select>
         </div>
     )
-
 }
 
 export default Dropdown;

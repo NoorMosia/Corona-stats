@@ -3,9 +3,7 @@ import Axios from "axios";
 import NumConverter from "../../HelperFunctions/NumConverter";
 import * as Styles from "./OverallView.module.css";
 
-// import StatsCard from "../../components/StatsCard/StatsCard";
 import SummaryCard from "../../components/Cards/SummaryCard/SummaryCard";
-// import Loader from "../../UI/Loader/Loader";
 
 class OverallView extends Component {
     state = {
@@ -35,7 +33,6 @@ class OverallView extends Component {
                     southARecovered: response.data.recovered,
                     southADeaths: response.data.deaths
                 })
-                console.log(response)
             })
             .catch(error => {
                 this.setState({
@@ -59,11 +56,6 @@ class OverallView extends Component {
                     recovered={NumConverter(this.state.southARecovered)}
                     deaths={NumConverter(this.state.southADeaths)}
                 ></SummaryCard>
-
-                {/* <StatsCard name="cases">{NumConverter(this.state.cases)}</StatsCard>
-                            <StatsCard name="recovered">{NumConverter(this.state.recovered)}</StatsCard>
-                            <StatsCard name="deaths">{NumConverter(this.state.deaths)}</StatsCard> */}
-
 
             </div>
         )
