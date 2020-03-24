@@ -1,6 +1,6 @@
 .ZAView {
-    height: 80vh;
-    overflow: scroll;
+    height: fit-content;
+    margin-bottom: 100px;
 }
 .Head {
     text-align: center;

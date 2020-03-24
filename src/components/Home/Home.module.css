@@ -1,6 +1,5 @@
 .Home {
-    height: 80vh;
-    overflow: scroll;
+    height: fit-content
 }
 
 .Cite {

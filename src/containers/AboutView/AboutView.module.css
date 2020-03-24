@@ -3,8 +3,7 @@
     flex-direction: column;
     text-align: center;
     background: ghostwhite;
-    height: 80vh;
-    overflow: scroll;
+    min-height: 100vh;
 }
 
 .AboutView a {
