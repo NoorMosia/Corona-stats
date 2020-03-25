@@ -82,11 +82,11 @@ class GraphView extends Component {
             "data": deaths
         })
 
-        newDataset.push({
-            "id": "recovered",
-            "color": "hsl(97, 46%, 28%)",
-            "data": recovered
-        })
+        // newDataset.push({
+        //     "id": "recovered",
+        //     "color": "hsl(97, 46%, 28%)",
+        //     "data": recovered
+        // })
 
         this.setState({
             ...this.state,

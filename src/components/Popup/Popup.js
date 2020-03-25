@@ -15,7 +15,8 @@ const Popup = props => {
                 Confirmed: {NumConverter(props.data.latest.confirmed)}
             </div>
             <div className={Styles.Data}>
-                Recovered: {NumConverter(props.data.latest.recovered)}
+                Recovered: ???
+                {/* Recovered: {NumConverter(props.data.latest.recovered)} */}
             </div>
             <div className={Styles.Data}>
                 Death: {NumConverter(props.data.latest.deaths)}
