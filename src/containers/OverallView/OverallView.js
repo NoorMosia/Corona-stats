@@ -18,10 +18,10 @@ class OverallView extends Component {
 
     componentDidMount = () => {
         let globalstats;
-        Axios.get("https://coronavirus-19-api.herokuapp.com/all")
+        Axios.get("https://cors-anywhere.herokuapp.com/https://coronavirus-19-api.herokuapp.com/all")
             .then(response => {
                 globalstats = response.data
-                return Axios.get("https://coronavirus-19-api.herokuapp.com/countries/south")
+                return Axios.get("https://cors-anywhere.herokuapp.com/https://coronavirus-19-api.herokuapp.com/countries/south")
             })
             .then(response => {
 

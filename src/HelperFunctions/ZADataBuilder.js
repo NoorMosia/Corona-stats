@@ -5,10 +5,10 @@
 const dataBuilder = (data) => {
     let newData = {}
     let provinces = {
-        "GP": 0, "KZN": 1, "WC": -1, "EC": 0, "NC": 0, "NW": 0, "FS": 0, "LP": 0, "MP": 0, "untracked": 0
+        "GP": 0, "KZN": 0, "WC": 0, "EC": 0, "NC": 0, "NW": 0, "FS": 0, "LP": 0, "MP": 0, "untracked": 0
     }
     let ages = {
-        "minors": 0, "youngAdults": 0, "adults": 0, "adultsOver40": 0, "adultsOver50": 0, "seniors": 0
+        "minors": 0, "youngAdults": 0, "adults": 0, "adultsOver40": 0, "adultsOver50": 0, "seniors": 0, "unspecified": 0
     }
     let genders = {
         "male": 0, "female": 0, "unspecified": 0
@@ -26,7 +26,9 @@ const dataBuilder = (data) => {
             genders = { ...genders, "unspecified": genders["unspecified"] + 1 }
         }
 
-        if (data[index]["age"] < 18) {
+        if (data[index]["age"] === "" && data[index]["age"] === "") {
+            ages = { ...ages, "unspecified": ages["unspecified"] + 1 }
+        } else if (data[index]["age"] < 18) {
             ages = { ...ages, "minors": ages["minors"] + 1 }
         } else if (data[index]["age"] >= 18 && data[index]["age"] < 30) {
             ages = { ...ages, "youngAdults": ages["youngAdults"] + 1 }

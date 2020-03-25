@@ -19,7 +19,7 @@ class GraphView extends Component {
             ...this.state,
             loading: true
         })
-        fetch("https://pomber.github.io/covid19/timeseries.json")
+        fetch("https://cors-anywhere.herokuapp.com/https://pomber.github.io/covid19/timeseries.json")
             .then(response => {
                 return response.json()
             })

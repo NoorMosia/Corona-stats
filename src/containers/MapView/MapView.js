@@ -16,7 +16,7 @@ class MapView extends Component {
     }
 
     componentDidMount = async () => {
-        Axios.get("https://coronavirus-tracker-api.herokuapp.com/v2/locations")
+        Axios.get("https://cors-anywhere.herokuapp.com/https://coronavirus-tracker-api.herokuapp.com/v2/locations")
             .then(response => {
                 this.setState({
                     data: response.data.locations,
