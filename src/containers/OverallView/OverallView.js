@@ -21,7 +21,7 @@ class OverallView extends Component {
         Axios.get("https://cors-anywhere.herokuapp.com/https://coronavirus-19-api.herokuapp.com/all")
             .then(response => {
                 globalstats = response.data
-                return Axios.get("https://cors-anywhere.herokuapp.com/https://coronavirus-19-api.herokuapp.com/countries/south")
+                return Axios.get("https://cors-anywhere.herokuapp.com/https://coronavirus-19-api.herokuapp.com/countries/south africa")
             })
             .then(response => {
 

@@ -5,7 +5,7 @@ import * as Styles from "./ZAView.module.css";
 import Loader from "../../UI/Loader/Loader";
 
 import LineChart from "../../components/Chart/LineChart/LineChart";
-import PieChart from "../../components/Chart/PieChart/PieChart";
+// import PieChart from "../../components/Chart/PieChart/PieChart";
 import OverallView from "../OverallView/OverallView";
 
 class ZAView extends Component {
@@ -104,7 +104,7 @@ class ZAView extends Component {
                             displayTitle="Provinces affected"
                         ></LineChart>
 
-                        <PieChart
+                        {/* <PieChart
                             total={this.state.total}
                             chartData={this.formatChartData(this.state.data.transmission_types)}
                             displayTitle="Travel history(close to diagnosis)"
@@ -120,7 +120,7 @@ class ZAView extends Component {
                             total={this.state.total}
                             chartData={this.formatChartData(this.state.data.genders)}
                             displayTitle="genders"
-                        ></PieChart>
+                        ></PieChart> */}
                     </React.Fragment>
                     : <Loader></Loader>
                 }

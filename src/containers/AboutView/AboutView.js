@@ -20,7 +20,10 @@ const AboutView = () => {
 
                 Individual country stats are from an API built by <a href="https://github.com/ExpDev07/coronavirus-tracker-api">ExpDev07</a>. <br /><br />
 
-                Daily data used in graph are from an API built by <a href="https://github.com/pomber/covid19">pomber</a>.
+                Daily data used in graph are from an API built by <a href="https://github.com/pomber/covid19">pomber</a>.<br /><br />
+
+                South African provinces data are from an API built by <a href="https://github.com/dsfsi/covid19za">Data Science for Social Impact research group</a>. <br /><br />
+
             </AboutSection>
         </div>
     )
